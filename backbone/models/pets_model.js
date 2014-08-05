@@ -1,15 +1,6 @@
 
 app.PetsModel = Backbone.Model.extend({
 	
-	defaults: {
-		id 			: 0,
-		name 		: 'Product Name',
-		price		: 0.0,
-		stock 		: 0,
-		stock_min 	: 0
-	},
-
-
 	 validate: function (attrs) {
         if (attrs.name == "") {
           return "error";

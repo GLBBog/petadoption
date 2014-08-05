@@ -1,9 +1,6 @@
-app.HomePets_View = Backbone.View.extend({
-    el: '.page1',
+app.PetListView = Backbone.View.extend({
 
     initialize: function () {
-        // GET THE LOCAL STORAGE DATA
-        //app.pets_collection.fetch();
         this.render();
     },
 
@@ -18,4 +15,4 @@ app.HomePets_View = Backbone.View.extend({
         list_pets.render(app.pets_collection); */ 
     }
 });
-app.HomeRecentPets_view = new app.HomePets_View();
+app.PetListView = new app.PetListView();
