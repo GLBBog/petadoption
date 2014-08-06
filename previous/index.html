@@ -11,11 +11,9 @@
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Backbone --> 
-		<script src="/lib/jquery-1.7.2.min.js"></script>
-		<script src="/lib/underscore-min.js"></script>
-        <script src="/lib/backbone-min.js"></script>
-        <script src="/lib/bootstrap.js"></script>
- 
+		<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://underscorejs.org/underscore-min.js"></script>
+		<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
 
 		<!--<script type="text/javascript" src="modelintroduction2.js"></script>-->
 		
@@ -74,7 +72,8 @@
 
         <!-- Page Content -->
          <div class="container">
-                
+             <div class="page1">
+             </div>
         <!-- Introduction Row -->
         <div class="row">
             <div class="col-lg-12">
@@ -85,12 +84,7 @@
             </div>
         </div>
              <br />
-        <div class="row">
-            <div id="content" class="span12>"></div>
-        </div>
-             <br />
         <!-- Team Members Row -->
-             <!--
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
@@ -135,9 +129,9 @@
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
         </div>
-        <hr>-->
+        <hr>
              <!--Pagination-->
-             <!--<div class="row text-center">
+             <div class="row text-center">
                 <div class="col-lg-12">
                     <ul class="pagination">
                         <li>
@@ -163,7 +157,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>-->
+            </div>
              <!--Pagination-->
         <!-- Footer -->
         <footer>
@@ -175,22 +169,29 @@
             </div>
             <!-- /.row -->
         </footer>
+
     </div>
-
-        <script src="js/app.js"></script>
-
-        <script src="js/memorystore.js"></script>
-
-        <script src="js/utils.js"></script>
-        <script src="js/models/pet.js"></script>
-        <script src="js/views/paginator.js"></script>
-
-        <script src="js/views/winelist.js"></script>
-        <script src="js/views/winedetails.js"></script>
-
-        <script src="/js/routers/router.js"></script>
-
         <!-- /.container -->
+
+        <!-- App.js -->
+		<script src="/backbone/app.js"></script>
+
+        <!-- LocalStorage.js -->
+        <script src="/backbone/LocalStorage.js"></script>
+
+		<!-- Models -->
+        <script src="/backbone/models/pet.js"></script>
+        
+        <script src="/backbone/views/paginator.js"></script>
+
+		<!-- Collections -->
+		<script src="/backbone/collections/pets_collection.js"></script>
+		
+		<!-- Views -->
+		<script src="/backbone/views/PetList.js"></script>
+		
+		<!-- Routers -->
+		<script src="/backbone/routers/routers.js"></script>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->

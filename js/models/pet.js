@@ -1,5 +1,6 @@
-app.Pet = Backbone.Model.extend({
+window.Pet = Backbone.Model.extend({
 
+    //urlRoot: "api/wines",
     urlRoot: "",
 
     initialize: function () {
@@ -17,15 +18,12 @@ app.Pet = Backbone.Model.extend({
         country: "USA",
         region: "California",
         details: "",
-        DefaultPicture: null,
-        PictureGallery : []
+        DefaultPicture: null
+        //PictureGallery : []
     }
 });
 
-app.PetCollection = Backbone.Collection.extend({
-
-    model: app.Pet,
-    //url: "api/wines"
+window.PetCollection = Backbone.Collection.extend({
+    model: Pet,
     url: ""
 });
-

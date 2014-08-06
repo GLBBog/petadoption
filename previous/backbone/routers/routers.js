@@ -16,6 +16,15 @@ app.Router = Backbone.Router.extend({
         var p = page ? parseInt(page, 10) : 1;
         var petList = new app.PetCollection();
 
+        console.log('ewewew');
+        console.log(petList);
+
+        petList.fetch({ success: function () {
+            $("#content").html(new app.PetListView({ model: petList, page: p }).el);
+        } 
+        });
+        //this.headerView.selectMenuItem('home-menu');
+
     }
 });
 
