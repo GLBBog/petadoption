@@ -10,10 +10,10 @@ window.PetListView = Backbone.View.extend({
         var startPos = (this.options.page - 1) * 6;
         var endPos = Math.min(startPos + 6, len);
 
-        $(this.el).html('<ul class="thumbnails"></ul>');
+        $(this.el).html('<div class="petThumbnails"></div>');
 
         for (var i = startPos; i < endPos; i++) {
-            $('.thumbnails', this.el).append(new PetListItemView({ model: wines[i] }).render().el);
+            $('.petThumbnails', this.el).append(new PetListItemView({ model: wines[i] }).render().el);
         }
 
         $(this.el).append(new Paginator({ model: this.model, page: this.options.page }).render().el);
@@ -24,9 +24,9 @@ window.PetListView = Backbone.View.extend({
 
 window.PetListItemView = Backbone.View.extend({
 
-    tagName: "li",
+    tagName: "div",
 
-    className: "span3",
+    className: "col-lg-4 col-sm-6 text-center fixbottom",
 
     initialize: function () {
         this.model.bind("change", this.render, this);
