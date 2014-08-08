@@ -16,7 +16,8 @@ window.PetListView = Backbone.View.extend({
             $('.petThumbnails', this.el).append(new PetListItemView({ model: wines[i] }).render().el);
         }
 
-        $(this.el).append(new Paginator({ model: this.model, page: this.options.page }).render().el);
+        $(this.el).append('<div class="row text-center" id="paggerPets"></div>');
+        $('#paggerPets', this.el).append(new Paginator({ model: this.model, page: this.options.page }).render().el);
 
         return this;
     }
