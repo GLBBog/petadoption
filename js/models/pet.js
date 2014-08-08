@@ -1,6 +1,5 @@
 window.Pet = Backbone.Model.extend({
 
-    //urlRoot: "api/wines",
     urlRoot: "",
 
     initialize: function () {
