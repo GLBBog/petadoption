@@ -17,8 +17,8 @@ window.Pet = Backbone.Model.extend({
         country: "USA",
         region: "California",
         details: "",
-        DefaultPicture: null
-        //PictureGallery : []
+        DefaultPicture: null,
+        Gallery : []
     }
 });
 
