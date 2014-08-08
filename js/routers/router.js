@@ -20,16 +20,16 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     petDetails: function (id) {
-        var wine = new Pet({id: id});
-        wine.fetch({success: function(){
-            $("#content").html(new PetView({model: wine}).el);
+        var pet = new Pet({id: id});
+        pet.fetch({success: function(){
+            $("#content").html(new PetView({model: pet}).el);
         }});
         
     },
 
 	addWine: function() {
-        var wine = new Pet();
-        $('#content').html(new PetView({model: wine}).el);
+        var pet = new Pet();
+        $('#content').html(new PetView({model: pet}).el);
         
 	}
 });
