@@ -24,5 +24,13 @@ window.Pet = Backbone.Model.extend({
 
 window.PetCollection = Backbone.Collection.extend({
     model: Pet,
-    url: ""
+    url: "",
+
+    byType: function (type) {
+        filtered = this.filter(function (pet) {
+            return pet.get("type") === type;
+        });
+        return new PetCollection(filtered);
+    }
+
 });

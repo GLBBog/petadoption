@@ -1,5 +1,11 @@
 window.utils = {
 
+    //Stringify
+    //Object ToJson()
+    asString : function(o){
+        return JSON.stringify(o.toJSON());
+    },
+
     // Asynchronously load templates located in separate .html files
     loadTemplate: function(views, callback) {
 
@@ -18,6 +24,7 @@ window.utils = {
         $.when.apply(null, deferreds).done(callback);
     },
 
+    /*
     uploadFile: function (file, callbackSuccess) {
         var self = this;
         var data = new FormData();
@@ -38,6 +45,7 @@ window.utils = {
             self.showAlert('Error!', 'An error occurred while uploading ' + file.name, 'alert-error');
         });
     },
+    */
 
     displayValidationErrors: function (messages) {
         for (var key in messages) {
