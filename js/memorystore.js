@@ -44,24 +44,25 @@ window.datacollector = {
         };
         this.pets[4] = {
             id: 4,
-            name: "Pet4",
+            name: "Juanito",
             year: "2009",
             grapes: "Syrah",
             type: "cat",
             country: "USA",
             region: "Washington",
             description: "A one-two punch of black pepper and jalapeno will send your senses reeling, as the orange essence snaps you back to reality. Don't miss this award-winning taste sensation.",
-            DefaultPicture: "jackie1.jpg"
+            DefaultPicture: "juanito1.jpg"
         };
         this.pets[5] = {
             id: 5,
-            name: "Pet5",
+            name: "Josep",
             year: "2009",
             grapes: "Pinot Noir",
+            type: "cat",
             country: "USA",
             region: "Oregon",
             description: "One cannot doubt that this will be the wine served at the Hollywood award shows, because it has undeniable star power. Be the first to catch the debut that everyone will be talking about tomorrow.",
-            DefaultPicture: "jackie1.jpg"
+            DefaultPicture: "josep1.jpg"
         };
         this.pets[6] = {
             id: 6,
