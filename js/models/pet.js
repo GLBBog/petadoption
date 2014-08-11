@@ -16,6 +16,7 @@ window.Pet = Backbone.Model.extend({
         type: "dog",
         country: "USA",
         region: "California",
+        vaccinated : "true",
         details: "",
         DefaultPicture: null,
         Gallery : []
