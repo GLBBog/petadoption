@@ -6,14 +6,21 @@ window.PetView = Backbone.View.extend({
 
     render: function () {
         $(this.el).html(this.template(this.model.toJSON()));
+        $('.carousel').carousel({
+            interval: 7000
+        })
+        this.model.get("Gallery").forEach(function (img) {
+            console.log($('#carousel'));
+            $('#carousel').append("<div class='item'><img src='http://placehold.it/600x400&amp;text=Fade+effect'></div>");
+        })
         return this;
     },
 
     events: {
-        "change"        : "change",
-        "click .save"   : "beforeSave",
-        "click .delete" : "deleteWine",
-        "drop #picture" : "dropHandler"
+        "change": "change",
+        "click .save": "beforeSave",
+        "click .delete": "deleteWine",
+        "drop #picture": "dropHandler"
     },
 
     change: function (event) {

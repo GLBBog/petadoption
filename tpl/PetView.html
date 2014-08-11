@@ -5,36 +5,48 @@
 
         <fieldset>
 
-            <legend>Wine Details</legend>
+            <legend>Pet Details</legend>
+            <div id="backbtn">
+                <a href="/">Back</a>
+            </div>
             <br/>
-
             <div class="row">
-                <div class="span9">
+                <div id="carousel" class="carousel slide">
+                    <div class="carousel-inner">
+				
+	                    <div class="item active">
+		                    <img src="<%= DefaultPicture === null ? 'pics/generic.jpg' : 'pics/' + DefaultPicture %>">
+	                    </div>
+					
+	                    <div class="item">
+		                    <img src="http://placehold.it/600x400&amp;text=Fade+effect">
+	                    </div>
+					
+                    </div>
+                    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="well">
 
                     <div class="control-group">
-                        <label for="wineId" class="control-label">Id:</label>
+                        <label class="control-label">Name:</label>
 
                         <div class="controls">
-                            <input id="wineId" name="id" type="text" value="<%= id === null ? '' : id %>" class="span1"
-                                   disabled/>
+                            <span><%= !name ? 'N/A' : name %></span>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label for="name" class="control-label">Name:</label>
+                        <label class="control-label">Age:</label>
 
                         <div class="controls">
-                            <input type="text" id="name" name="name" value="<%= name %>"/>
-                            <span class="help-inline"></span>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="grapes" class="control-label">Age:</label>
-
-                        <div class="controls">
-                            <input type="text" id="age" name="age" value="<%= age %>"/>
-                            <span class="help-inline"></span>
+                            <span><%= !age ? 'N/A' : age %></span>
                         </div>
                     </div>
 
@@ -42,65 +54,41 @@
                         <label for="country" class="control-label">Country:</label>
 
                         <div class="controls">
-                            <input type="text" id="country" name="country" value="<%= country %>"/>
-                            <span class="help-inline"></span>
+                            <span><%= !country ? 'N/A' : country %></span>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label for="region" class="control-label">Region:</label>
+                        <label class="control-label">Region:</label>
 
                         <div class="controls">
-                            <input type="text" id="region" name="region" value="<%= region %>"/>
+                            <span><%= !region ? 'N/A' : region %></span>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label for="year" class="control-label">size:</label>
+                        <label class="control-label">size:</label>
 
                         <div class="controls">
-                            <input type="text" id="region" name="region" value="<%= size %>"/>
+                            <span><%= !size ? 'N/A' : size %></span>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label for="description" class="control-label">details:</label>
+                        <label class="control-label">details:</label>
 
                         <div class="controls">
-                            <textarea id="description" name="description" class="span6" rows="6"><%= details %></textarea>
+                            <textarea id="description" readonly name="description" class="span6" rows="6"><%= details %></textarea>
                         </div>
                     </div>
 
                 </div>
-
-                <div class="span3">
-                    <div class="well">
-                        <p><img id="picture" width="180" src="<%= DefaultPicture === null ? 'pics/generic.jpg' : 'pics/' + DefaultPicture %>" alt="" /></p>
-
-                        <p>To change the picture, drag a new picture from your file system onto the box above.</p>
-                    </div>
-                </div>
-
             </div>
 
         </fieldset>
-
-        <div class="form-actions">
-            <a href="#" class="btn btn-primary save">Save</a>
-            <a href="#" class="btn delete">Delete</a>
-        </div>
-
     </form>
     <div id="backbtn">
         <a href="/">Back</a>
-    </div>
-</div>
-
-<div class="row status-bar">
-    <div class="span12">
-        <div class="alert alert-success" style="display: none">
-            <b>Success!</b> Pet saved successfully
-        </div>
     </div>
 </div>
 
