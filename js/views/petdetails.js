@@ -5,14 +5,14 @@ window.PetView = Backbone.View.extend({
     },
 
     render: function () {
-        $(this.el).html(this.template(this.model.toJSON()));
-        $('.carousel').carousel({
+        var cont = $(this.el);
+        cont.html(this.template(this.model.toJSON()));
+        this.$('.carousel').carousel({
             interval: 7000
-        })
+        });
         this.model.get("Gallery").forEach(function (img) {
-            console.log($('#carousel'));
-            $('#carousel').append("<div class='item'><img src='http://placehold.it/600x400&amp;text=Fade+effect'></div>");
-        })
+            cont.find('.carousel-inner').append("<div class='item'><img src='pics/" + img + "'></div>");
+        });
         return this;
     },
 

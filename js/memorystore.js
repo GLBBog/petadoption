@@ -17,7 +17,7 @@ window.datacollector = {
             region: "California",
             details: "This little dog need your care",
             DefaultPicture: "jackie1.jpg",
-            Gallery : ["lan_rioja.jpg", "lan_rioja.jpg", "lan_rioja.jpg"]
+            Gallery : ["Aleman1.jpg", "Aleman2.jpg", "Aleman3.jpg"]
         };
         this.pets[2] = {
             id: 2,
