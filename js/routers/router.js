@@ -7,24 +7,28 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     initialize: function () {
+
     },
 
     list: function (page) {
         var p = page ? parseInt(page, 10) : 1;
-        var petList = new PetCollection();
+        var typesList = new TypeCollection();
+        typesList.add([{name: 'Dog'}, {name: 'Cat'}, {name: 'Other'}]);
+        var l = new TypesListView({ model: typesList, page: p })
 
+        var petList = new PetCollection();
         petList.fetch({ success: function () {
-                petList = petList.byType("cat");
-                $("#content").html(new PetListView({ model: petList, page: p }).el);
-            } 
+            /*petList = petList.byType("dog");*/
+            $("#content").html(new PetListView({ model: petList, page: p }).el);
+        }
         });
     },
 
     petDetails: function (id) {
         var pet = new Pet({ id: id });
         pet.fetch({ success: function () {
-                $("#content").html(new PetView({ model: pet }).el);
-            } 
+            $("#content").html(new PetView({ model: pet }).el);
+        }
         });
     },
 
@@ -34,8 +38,7 @@ app.AppRouter = Backbone.Router.extend({
     }
 });
 
-utils.loadTemplate(['PetView', 'PetListItemView'], function () {
+utils.loadTemplate(['PetView', 'PetListItemView'], function() {
     app = new app.AppRouter();
-
     Backbone.history.start();
 });

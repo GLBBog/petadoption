@@ -1,9 +1,7 @@
 window.PetListView = Backbone.View.extend({
-
     initialize: function () {
         this.render();
     },
-
     render: function () {
         var pets = this.model.models;
         var len = pets.length;

@@ -1,17 +1,30 @@
-var app = app || {};
+window.TypesListView = Backbone.View.extend({
 
-app.TypesListView = Backbone.View.extend({
+    el: '#types_list',
+    events: {
+        'click' : 'filterPets',
+    },
+    initialize: function () {
+        this.render();
+    },
 
-	el: '#types_list',
-	
-	initialize: function( types ) {
-		this.collection = new app.Types( types );
-		this.render();
-	},
-	
-	render: function() {
-		this.template = _.template($( '#genresListTemplate' ).html(),{genres: this.collection.toJSON()});
-		this.$el.html(this.template);
-	}
+    render: function () {
+        var modTypes = this.model.models;
+        var content = $(this.el);
+        var countTypes = modTypes.length;
+        for (var i = 0; i < countTypes; i++) {
+            content.append("<li><a>" + modTypes[i].get('name') + "</a></li>");
+        }
+    },
+
+    filterPets: function(e){
+        var p = 1;
+		var petList = new PetCollection();
+        petList.fetch({ success: function () {
+            petList = petList.byType(e.target.text.toLowerCase());
+            $("#content").html(new PetListView({ model: petList, page: p}).el);
+        }
+	})
+    }
 
 });
