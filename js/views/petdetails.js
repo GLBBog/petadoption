@@ -11,16 +11,26 @@ window.PetView = Backbone.View.extend({
         this.$('.carousel').carousel({
             interval: 7000
         });
+
+        var countgall = this.model.get("Gallery").length;
+        if (countgall > 0) {
+            for (var i = 0; i < countgall; i++) {
+                cont.find('.carousel-inner').append("<div class='item " + (i === 0 ? "active" : '') + "'><img src='pics/" + this.model.get("Gallery")[i] + "' width='750' height='400'></div>");
+            }
+        } else { this.$('.carousel').hide(); }
+
+        /*
         this.model.get("Gallery").forEach(function (img) {
-            cont.find('.carousel-inner').append("<div class='item'><img src='pics/" + img + "' width='750' height='400'></div>");
-        });
+        cont.find('.carousel-inner').append("<div class='item active'><img src='pics/" + img + "' width='750' height='400'></div>");
+        });*/
+
         return this;
     },
 
     events: {
         "change": "change",
         "click .save": "beforeSave",
-        "click .delete": "deleteWine",
+        "click .delete": "deletePet",
         "drop #picture": "dropHandler"
     },
 
@@ -55,16 +65,16 @@ window.PetView = Backbone.View.extend({
             this.model.set("picture", this.pictureFile.name);
             utils.uploadFile(this.pictureFile,
                 function () {
-                    self.saveWine();
+                    self.savePet();
                 }
             );
         } else {
-            this.saveWine();
+            this.savePet();
         }
         return false;
     },
 
-    saveWine: function () {
+    savePet: function () {
         var self = this;
         this.model.save(null, {
             success: function (model) {
@@ -78,7 +88,7 @@ window.PetView = Backbone.View.extend({
         });
     },
 
-    deleteWine: function () {
+    deletePet: function () {
         this.model.destroy({
             success: function () {
                 alert('Wine deleted successfully');

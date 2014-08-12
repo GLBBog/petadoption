@@ -19,7 +19,12 @@ window.Pet = Backbone.Model.extend({
         vaccinated : "true",
         details: "",
         DefaultPicture: null,
-        Gallery : []
+        Gallery : [],
+        ContactName: "",
+        ContactEmail : "",
+        ContactPhone : "",
+        ContactAddress : "",
+        ContactZip: ""
     }
 });
 
