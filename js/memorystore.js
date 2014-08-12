@@ -17,8 +17,8 @@ window.datacollector = {
             region: "California",
             vaccinated : "true",
             details: "This little dog need your care",
-            DefaultPicture: "jackie1.jpg",
-            Gallery : ["Aleman1.jpg", "Aleman2.jpg", "Aleman3.jpg"]
+            DefaultPicture: "Mati.jpg",
+            Gallery : ["Mati1.jpg", "Mati2.jpg", "Mati3.jpg"]
         };
         this.pets[2] = {
             id: 2,
@@ -61,13 +61,16 @@ window.datacollector = {
             id: 5,
             name: "Josep",
             year: "2009",
+            gender: "Female",
+            age: "1",
             grapes: "Pinot Noir",
             type: "cat",
             country: "USA",
             region: "Oregon",
             vaccinated : "true",
             description: "One cannot doubt that this will be the wine served at the Hollywood award shows, because it has undeniable star power. Be the first to catch the debut that everyone will be talking about tomorrow.",
-            DefaultPicture: "josep1.jpg"
+            DefaultPicture: "josep.jpg",
+            Gallery : ["Josep1.jpg", "Josep2.jpg", "Josep3.jpg"]
         };
         this.pets[6] = {
             id: 6,
