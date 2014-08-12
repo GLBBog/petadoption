@@ -14,7 +14,7 @@ app.AppRouter = Backbone.Router.extend({
         var petList = new PetCollection();
 
         petList.fetch({ success: function () {
-                petList = petList.byType("dog");
+                petList = petList.byType("cat");
                 $("#content").html(new PetListView({ model: petList, page: p }).el);
             } 
         });
@@ -34,7 +34,8 @@ app.AppRouter = Backbone.Router.extend({
     }
 });
 
-utils.loadTemplate(['PetView', 'PetListItemView'], function() {
+utils.loadTemplate(['PetView', 'PetListItemView'], function () {
     app = new app.AppRouter();
+
     Backbone.history.start();
 });

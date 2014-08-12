@@ -2,6 +2,7 @@ window.PetView = Backbone.View.extend({
 
     initialize: function () {
         this.render();
+        $('#HomePlaceHolder').hide();
     },
 
     render: function () {
@@ -11,7 +12,7 @@ window.PetView = Backbone.View.extend({
             interval: 7000
         });
         this.model.get("Gallery").forEach(function (img) {
-            cont.find('.carousel-inner').append("<div class='item'><img src='pics/" + img + "'></div>");
+            cont.find('.carousel-inner').append("<div class='item'><img src='pics/" + img + "' width='750' height='400'></div>");
         });
         return this;
     },

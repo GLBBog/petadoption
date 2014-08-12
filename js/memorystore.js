@@ -15,6 +15,7 @@ window.datacollector = {
             type: "dog",
             country: "USA",
             region: "California",
+            vaccinated : "true",
             details: "This little dog need your care",
             DefaultPicture: "jackie1.jpg",
             Gallery : ["Aleman1.jpg", "Aleman2.jpg", "Aleman3.jpg"]
@@ -27,6 +28,7 @@ window.datacollector = {
             type: "dog",
             grapes: "Tempranillo",
             country: "Spain",
+            vaccinated : "true",
             region: "Rioja",
             description: "A resurgence of interest in boutique vineyards has opened the door for this excellent foray into the dessert wine market. Light and bouncy, with a hint of black truffle, this wine will not fail to tickle the taste buds.",
             DefaultPicture: "philip1.jpg"
@@ -38,6 +40,7 @@ window.datacollector = {
             grapes: "Sauvignon Blanc",
             type: "dog",
             country: "USA",
+            vaccinated : "true",
             region: "California Central Cosat",
             description: "The cache of a fine Cabernet in ones wine cellar can now be replaced with a childishly playful wine bubbling over with tempting tastes of black cherry and licorice. This is a taste sure to transport you back in time.",
             DefaultPicture: "jackie1.jpg"
@@ -50,6 +53,7 @@ window.datacollector = {
             type: "cat",
             country: "USA",
             region: "Washington",
+            vaccinated : "true",
             description: "A one-two punch of black pepper and jalapeno will send your senses reeling, as the orange essence snaps you back to reality. Don't miss this award-winning taste sensation.",
             DefaultPicture: "juanito1.jpg"
         };
@@ -61,6 +65,7 @@ window.datacollector = {
             type: "cat",
             country: "USA",
             region: "Oregon",
+            vaccinated : "true",
             description: "One cannot doubt that this will be the wine served at the Hollywood award shows, because it has undeniable star power. Be the first to catch the debut that everyone will be talking about tomorrow.",
             DefaultPicture: "josep1.jpg"
         };

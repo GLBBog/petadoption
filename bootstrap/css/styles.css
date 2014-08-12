@@ -3,3 +3,11 @@
 .container-carrousel {
   width: 400px;
 }
+
+.h2margintop{
+   margin-top: 0px;
+}
+
+.paddingRow {
+padding: 20px;
+}
