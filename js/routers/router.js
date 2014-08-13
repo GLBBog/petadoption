@@ -3,7 +3,8 @@ app.AppRouter = Backbone.Router.extend({
     routes: {
         "": "list",
         "pets/page/:page": "list",
-        "pets/:id": "petDetails"
+        "pets/:id": "petDetails",
+        "publish": "addPet"
     },
 
     initialize: function () {
@@ -30,28 +31,20 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     petDetails: function (id) {
-        //var pet = new Pet({ id: id });
-
+        
         var petList = new PetCollection();
 
-        console.log('pet id ' + id);
-
         petList.fetch({ success: function () {
-
             petList = petList.byId(id);
-            console.log(utils.asString(petList));
-
             $("#content").html(new PetView({ model: petList }).el);
-
-            //console.log('pet ' + utils.asString(petList));
-            //$("#content").html(new PetView({ model: petList }).el);
         }
         });
     },
 
     addPet: function () {
-        var pet = new Pet();
-        $('#content').html(new PetView({ model: pet }).el);
+        console.log('publishing...');
+        //var pet = new Pet();
+        //$('#content').html(new PetView({ model: pet }).el);
     }
 });
 
