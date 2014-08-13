@@ -2,7 +2,7 @@ window.TypesListView = Backbone.View.extend({
 
     el: '#types_list',
     events: {
-        'click' : 'filterPets',
+        'click' : 'filterPets'
     },
     initialize: function () {
         this.render();

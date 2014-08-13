@@ -28,8 +28,6 @@ window.PetListItemView = Backbone.View.extend({
     className: "col-lg-4 col-sm-6 text-center fixbottom",
 
     initialize: function () {
-        this.model.bind("change", this.render, this);
-        this.model.bind("destroy", this.close, this);
     },
 
     render: function () {

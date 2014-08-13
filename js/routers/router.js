@@ -30,11 +30,6 @@ app.AppRouter = Backbone.Router.extend({
             $("#content").html(new PetView({ model: pet }).el);
         }
         });
-    },
-
-    addPet: function () {
-        var pet = new Pet();
-        $('#content').html(new PetView({ model: pet }).el);
     }
 });
 
