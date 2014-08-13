@@ -15,7 +15,7 @@ window.Pet = Backbone.Model.extend({
         activity: "",
         type: "dog",
         country: "USA",
-        region: "California",
+        region: "",
         vaccinated : "true",
         details: "",
         DefaultPicture: null,
@@ -30,11 +30,17 @@ window.Pet = Backbone.Model.extend({
 
 window.PetCollection = Backbone.Collection.extend({
     model: Pet,
-    url: "",
+    url: "./data/jpets.json",
 
     byType: function (type) {
         filtered = this.filter(function (pet) {
             return pet.get("type") === type;
+        });
+        return new PetCollection(filtered);
+    },
+    byId: function (id) {
+        filtered = this.filter(function (pet) {
+            return pet.get("id") == id;
         });
         return new PetCollection(filtered);
     }

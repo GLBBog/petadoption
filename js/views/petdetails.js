@@ -11,66 +11,24 @@ window.PetView = Backbone.View.extend({
     render: function () {
 
         var pets = this.model.models;
-        
+
         console.log('pets.length ' + pets.length);
 
         if (pets.length > 0) {
             console.log('this.model detail ' + pets[0].toJSON());
             $(this.el).html(this.template(pets[0].toJSON()));
+
+            var cont = $(this.el);
+
+            var PetGallery = pets[0].get("Gallery");
+            
+            if (PetGallery.length > 0) {
+                for (var i = 0; i < PetGallery.length; i++) {
+                    cont.find('.carousel-inner').append("<div class='item " + (i === 0 ? "active" : '') + "'><img src='pics/" + PetGallery[i] + "' width='750' height='400'></div>");
+                }
+            } else { this.$('.carousel').hide(); }
         }
-
         return this;
-
-        /*
-        var pets = this.model.models;
-
-        console.log('ssss' + this.model.toJSON());
-        
-        var sime = JSON.parse(utils.asString(this.model));
-
-        console.log('pets : ' + sime);
-        var gallery = this.model.get("Gallery");
-
-        console.log('this.model.toJSON());');
-        var sss = this.model.toJSON()
-
-        console.log(this.model.get("name"));
-        */
-
-        //$(this.el).html('dsddd' + this.template(this.model.toJSON()));
-
-        //$(this.el).html('dsddd' + this.template(this.model.toJSON()));
-
-        /*
-        var cont = $(this.el);
-
-        console.log('this.model ' + utils.asString(this.model));
-        console.log('this.model ' + this.model);
-        console.log('this.model.toJSON() ' + this.model.toJSON());
-
-        cont.html(this.template(this.model.toJSON()));
-        this.$('.carousel').carousel({
-        interval: 7000
-        });
-
-        console.log('gallery : ' + this.model.get("name"));
-        */
-        /*
-        var countgall = this.model.get("Gallery").length;
-        if (countgall > 0) {
-        for (var i = 0; i < countgall; i++) {
-        cont.find('.carousel-inner').append("<div class='item " + (i === 0 ? "active" : '') + "'><img src='pics/" + this.model.get("Gallery")[i] + "' width='750' height='400'></div>");
-        }
-        } else { this.$('.carousel').hide(); }*/
-
-        /*
-        this.model.get("Gallery").forEach(function (img) {
-        cont.find('.carousel-inner').append("<div class='item active'><img src='pics/" + img + "' width='750' height='400'></div>");
-        });}
-        
-        return this;
-        */
-
     },
 
     events: {

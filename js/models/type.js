@@ -6,5 +6,5 @@ defaults: {
 
 window.TypeCollection = Backbone.Collection.extend({
 	model: Type,
-	url:"",
+	url:""
 });

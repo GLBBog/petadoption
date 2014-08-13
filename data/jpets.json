@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Mati",
+    "gender": "Male",
+    "age": "1",
+    "size": "small",
+    "activity": "normal",
+    "type": "dog",
+    "country": "USA",
+    "region": "California",
+    "vaccinated": "true",
+    "details": "This little dog need your care",
+    "DefaultPicture": "Mati.jpg",
+    "Gallery": [
+      "Mati1.jpg",
+      "Mati2.jpg",
+      "Mati3.jpg"
+    ],
+    "ContactName": "",
+    "ContactEmail": "",
+    "ContactPhone": "",
+    "ContactAddress": "",
+    "ContactZip": ""
+  },
+  {
+    "id": 2,
+    "name": "Pacho",
+    "gender": "Female",
+    "age": "",
+    "size": "",
+    "activity": "",
+    "type": "dog",
+    "country": "Spain",
+    "region": "Rioja",
+    "vaccinated": "true",
+    "details": "A resurgence of interest in boutique vineyards has opened the door for this excellent foray into the dessert wine market. Light and bouncy, with a hint of black truffle, this wine will not fail to tickle the taste buds.",
+    "DefaultPicture": "philip1.jpg",
+    "Gallery": [
+      "Mati1.jpg"
+    ],
+    "ContactName": "",
+    "ContactEmail": "",
+    "ContactPhone": "",
+    "ContactAddress": "",
+    "ContactZip": ""
+  },
+  {
+    "id": 3,
+    "name": "Pacho",
+    "gender": "Female",
+    "age": "",
+    "size": "",
+    "activity": "",
+    "type": "cat",
+    "country": "Spain",
+    "region": "Rioja",
+    "vaccinated": "true",
+    "details": "A resurgence of interest in boutique vineyards has opened the door for this excellent foray into the dessert wine market. Light and bouncy, with a hint of black truffle, this wine will not fail to tickle the taste buds.",
+    "DefaultPicture": "philip1.jpg",
+    "Gallery": [
+      "Mati1.jpg"
+    ],
+    "ContactName": "",
+    "ContactEmail": "",
+    "ContactPhone": "",
+    "ContactAddress": "",
+    "ContactZip": ""
+  },
+    {
+    "id": 4,
+    "name": "Pacho",
+    "gender": "Female",
+    "age": "",
+    "size": "",
+    "activity": "",
+    "type": "cat",
+    "country": "Spain",
+    "region": "Rioja",
+    "vaccinated": "true",
+    "details": "A resurgence of interest in boutique vineyards has opened the door for this excellent foray into the dessert wine market. Light and bouncy, with a hint of black truffle, this wine will not fail to tickle the taste buds.",
+    "DefaultPicture": "philip1.jpg",
+    "Gallery": [
+      "Mati1.jpg"
+    ],
+    "ContactName": "",
+    "ContactEmail": "",
+    "ContactPhone": "",
+    "ContactAddress": "",
+    "ContactZip": ""
+  }
+]

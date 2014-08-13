@@ -297,6 +297,8 @@ datacollector.populate();
 
 // Overriding Backbone's sync method. Replace the default RESTful services-based implementation
 // with a simple in-memory approach.
+
+/*
 Backbone.sync = function (method, model, options) {
 
     var resp;
@@ -321,4 +323,4 @@ Backbone.sync = function (method, model, options) {
     } else {
         options.error("Record not found");
     }
-};
+};*/
