@@ -4,7 +4,7 @@ window.PetPublishView = Backbone.View.extend({
     },
     render: function () {
         var pets = this.model.models;
-        $(this.el).html(this.template(this.model.toJSON()));
+        $(this.el).html(this.template(pets[0].toJSON()));
         return this;
     }
 });
