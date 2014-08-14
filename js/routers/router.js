@@ -63,7 +63,7 @@ app.AppRouter = Backbone.Router.extend({
     }
 });
 
-utils.loadTemplate(['PetView', 'PetListItemView'], function() {
+utils.loadTemplate(['PetView', 'PetListItemView', 'PetPublishView'], function() {
     app = new app.AppRouter();
     Backbone.history.start();
 });
