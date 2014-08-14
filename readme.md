@@ -1,4 +1,4 @@
-# Wine Cellar Sample Application with Backbone.js and Twitter Bootstrap #
+# Pet adoption Application with Backbone.js and Bootstrap #
 
 "Backbone Cellar" is a sample CRUD application built with Backbone.js and Twitter Bootstrap. The application allows you to browse through a list of wines, as well as add, update, and delete wines.
 
