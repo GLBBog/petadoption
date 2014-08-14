@@ -4,19 +4,7 @@ window.PetPublishView = Backbone.View.extend({
     },
     render: function () {
         var pets = this.model.models;
-        var len = pets.length;
-        var startPos = (this.options.page - 1) * 6;
-        var endPos = Math.min(startPos + 6, len);
-
-        $(this.el).html('<div class="petThumbnails"></div>');
-
-        for (var i = startPos; i < endPos; i++) {
-            $('.petThumbnails', this.el).append(new PetListItemView({ model: pets[i] }).render().el);
-        }
-
-        $(this.el).append('<div class="row text-center" id="paggerPets"></div>');
-        $('#paggerPets', this.el).append(new Paginator({ model: this.model, page: this.options.page }).render().el);
-
+        $(this.el).html(this.template(this.model.toJSON()));
         return this;
     }
 });
