@@ -12,9 +12,12 @@ window.TypesListView = Backbone.View.extend({
         var modTypes = this.model.models;
         var content = $(this.el);
         var countTypes = modTypes.length;
-        for (var i = 0; i < countTypes; i++) {
-            content.append("<li><a>" + modTypes[i].get('name') + "</a></li>");
-        }
+
+        if(!content.has( "li" ).length){
+            for (var i = 0; i < countTypes; i++) {
+                content.append("<li><a>" + modTypes[i].get('name') + "</a></li>");
+            } 
+        }           
     },
 
     filterPets: function(e){

@@ -14,24 +14,21 @@ app.AppRouter = Backbone.Router.extend({
     list: function (page) {
 
         var p = page ? parseInt(page, 10) : 1;
+
         var typesList = new TypeCollection();
-        console.log('typesList ' + typesList);
+        
         typesList.add([{ name: 'Dog' }, { name: 'Cat' }, { name: 'Other'}]);
-        var l = new TypesListView({ model: typesList, page: p })
+        var l = new TypesListView({ model: typesList, page: p });
 
         var petList = new PetCollection();
         petList.fetch({ success: function () {
-            /*petList = petList.byType("dog");*/
-
-            console.log(utils.asString(petList));
-
             $("#content").html(new PetListView({ model: petList, page: p }).el);
         }
         });
     },
 
     petDetails: function (id) {
-        
+
         var petList = new PetCollection();
 
         petList.fetch({ success: function () {
