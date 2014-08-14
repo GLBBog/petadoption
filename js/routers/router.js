@@ -2,7 +2,7 @@ app.AppRouter = Backbone.Router.extend({
 
     routes: {
         "": "list",
-        "pets/page/:page": "list",
+        "pets/page/:page": "listPage",
         "pets/:id": "petDetails",
         "publish": "addPet"
     },
@@ -16,13 +16,27 @@ app.AppRouter = Backbone.Router.extend({
         var p = page ? parseInt(page, 10) : 1;
 
         var typesList = new TypeCollection();
-        
         typesList.add([{ name: 'Dog' }, { name: 'Cat' }, { name: 'Other'}]);
         var l = new TypesListView({ model: typesList, page: p });
 
         var petList = new PetCollection();
         petList.fetch({ success: function () {
             $("#content").html(new PetListView({ model: petList, page: p }).el);
+        }
+        });
+    },
+
+    listPage: function (page) {
+
+        var p = page ? parseInt(page, 10) : 1;
+
+        var petList = new PetCollection();
+        petList.fetch({ success: function () {
+
+            if(window.TypePetSession !== undefined)
+                petList = petList.byType(window.TypePetSession);
+            
+            $("#content").html(new PetListView({ model: petList, page: p}).el);
         }
         });
     },
