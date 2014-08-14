@@ -54,8 +54,12 @@ app.AppRouter = Backbone.Router.extend({
 
     addPet: function () {
         console.log('publishing...');
-        //var pet = new Pet();
-        //$('#content').html(new PetView({ model: pet }).el);
+        var petList = new PetCollection();
+
+        petList.fetch({ success: function () {
+            $("#content").html(new PetPublishView({ model: petList }).el);
+        }
+        });
     }
 });
 
