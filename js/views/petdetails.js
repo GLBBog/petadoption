@@ -21,7 +21,7 @@ window.PetView = Backbone.View.extend({
             var cont = $(this.el);
 
             var PetGallery = pets[0].get("Gallery");
-            
+
             if (PetGallery.length > 0) {
                 for (var i = 0; i < PetGallery.length; i++) {
                     cont.find('.carousel-inner').append("<div class='item " + (i === 0 ? "active" : '') + "'><img src='pics/" + PetGallery[i] + "' width='750' height='400'></div>");
@@ -33,9 +33,7 @@ window.PetView = Backbone.View.extend({
 
     events: {
         "change": "change",
-        "click .save": "beforeSave",
-        "click .delete": "deletePet",
-        "drop #picture": "dropHandler"
+        "click .save": "beforeSave"
     },
 
     change: function (event) {
@@ -90,31 +88,6 @@ window.PetView = Backbone.View.extend({
                 utils.showAlert('Error', 'An error occurred while trying to delete this item', 'alert-error');
             }
         });
-    },
-
-    deletePet: function () {
-        this.model.destroy({
-            success: function () {
-                alert('Wine deleted successfully');
-                window.history.back();
-            }
-        });
-        return false;
-    },
-
-    dropHandler: function (event) {
-        event.stopPropagation();
-        event.preventDefault();
-        var e = event.originalEvent;
-        e.dataTransfer.dropEffect = 'copy';
-        this.pictureFile = e.dataTransfer.files[0];
-
-        // Read the image file from the local file system and display it in the img tag
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            $('#picture').attr('src', reader.result);
-        };
-        reader.readAsDataURL(this.pictureFile);
     }
 
 });
