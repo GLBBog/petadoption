@@ -1,5 +1,6 @@
 window.PetPublishView = Backbone.View.extend({
     initialize: function () {
+        $('#HomePlaceHolder').hide();
         this.render();
     },
     render: function () {

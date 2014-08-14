@@ -1,153 +1,164 @@
-
-    <div class="col-lg-12">
-        <h2 class="page-header h2margintop"><%= !name ? 'N/A' : name %><small> / <%= !gender ? 'N/A' : gender %></small></h2>
-    </div>
-
-  <div class="col-md-4">
-      <div class="bg-info paddingRow">
-  <div id="detailPet">
-    <table class="table text-center table-striped">
-      <thead>
-        <tr>
-          <td colspan="2">
-              <img alt="Pets adoption app" src="<%= DefaultPicture === null ? 'pics/generic.jpg' : 'pics/' + DefaultPicture %>" width="120" height="120" class="img-circle img-responsive img-center"  /> 
-          </td>
-        </tr>
-        <tr>
-          <td>Name: </td>
-          <td><%= !name ? 'N/A' : name %></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Gender</td>
-          <td><%= !gender ? 'N/A' : gender %></td>
-        </tr>
-        <tr>
-          <td>Age</td>
-          <td><%= !age ? 'N/A' : age %></td>
-        </tr>
-        <tr>
-          <td>Size</td>
-          <td><%= !size ? 'N/A' : size %></td>
-        </tr>
-        <tr>
-          <td>Activity</td>
-          <td><%= !activity ? 'N/A' : activity %></td>
-        </tr>
-        <tr>
-          <td>Vaccinated</td>
-          <td><%= !vaccinated ? 'N/A' : vaccinated %></td>
-        </tr>
-        <tr>
-          <td colspan="2"><p><%= !details ? 'N/A' : details %></p></td>
-        </tr>
-      </tbody>
-    </table>
-    </div>      
-      </div>
-
+<div class="col-lg-12">
+    <h2 class="page-header h2margintop">Add your pet<small> / help them to get a home!</small></h2>
 </div>
 
-  <div class="col-md-8">
-         <div id="carousel" class="carousel slide">
-            <div class="carousel-inner">
-	            <!--<div class="item active">
-		            <img alt="Pets adoption app" src="<%= DefaultPicture === null ? 'pics/generic.jpg' : 'pics/' + DefaultPicture %>" width="750" height="400" /> 
-                </div>-->
+<div class="col-md-8">
+    <form role="form">
+        <h4>Pet Section</h4>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputNamePet">Name</label>
+                <input type="email" class="form-control" id="InputNamePet" placeholder="Name">
             </div>
-            <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
         </div>
-  </div>
-
-<div class="col-lg-12">
-    <div id="backbtn">
-        <a href="/">Back</a>
-    </div>
-    </div>
-<!--
-<div class="col-lg-12">
-            <legend>Pet Details</legend>
-            <div id="backbtn">
-                <a href="/">Back</a>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="SelectPetType">Type</label>
+                  <select class="form-control" id="SelectPetType">
+                    <option>Select...</option>
+                    <option>dog</option>
+                    <option>cat</option>
+                    <option>other</option>
+                  </select>
             </div>
-            <br/>
-            <div class="row">
-                <div class="container-carrousel">
-                    <div id="carousel" class="carousel slide">
-                        <div class="carousel-inner">
-	                        <div class="item active">
-		                        <img src="<%= DefaultPicture === null ? 'pics/generic.jpg' : 'pics/' + DefaultPicture %>" width="400">
-	                        </div>					
-                        </div>
-                        <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
-                    </div>
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputAgePet">Age</label>
+                <input type="email" class="form-control" id="InputAgePet" placeholder="Age">
             </div>
-            <div class="row">
-                <div class="well">
-
-                    <div class="control-group">
-                        <label class="control-label">Name:</label>
-
-                        <div class="controls">
-                            <span><%= !name ? 'N/A' : name %></span>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">Age:</label>
-
-                        <div class="controls">
-                            <span><%= !age ? 'N/A' : age %></span>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="country" class="control-label">Country:</label>
-
-                        <div class="controls">
-                            <span><%= !country ? 'N/A' : country %></span>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">Region:</label>
-
-                        <div class="controls">
-                            <span><%= !region ? 'N/A' : region %></span>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">size:</label>
-
-                        <div class="controls">
-                            <span><%= !size ? 'N/A' : size %></span>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">details:</label>
-
-                        <div class="controls">
-                            <textarea id="description" readonly name="description" class="span6" rows="6"><%= details %></textarea>
-                        </div>
-                    </div>
-
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="SelectPetSize">Size</label>
+                 <select class="form-control" id="SelectPetSize">
+                    <option>Select...</option>
+                    <option>very small</option>
+                    <option>small</option>
+                    <option>medium</option>
+                    <option>large</option>
+                    <option>giant</option>
+                  </select>
             </div>
-
-  
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="SelectPetGender">Gender</label>
+                 <select class="form-control" id="SelectPetGender">
+                    <option>Select...</option>
+                    <option>male</option>
+                    <option>female</option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="SelectPetActivity">Activity</label>
+                 <select class="form-control" id="SelectPetActivity">
+                    <option>Select...</option>
+                    <option>quiet</option>
+                    <option>active</option>
+                    <option>brisk</option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputBreedPet">Breed</label>
+                <input type="email" class="form-control" id="InputBreedPet" placeholder="Breed">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                    <label for="CheckVaccPet">
+                      Vaccinated ? <input type="checkbox" id="CheckVaccPet" class="form-control">
+                    </label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputCountryPet">Country</label>
+                <input type="email" class="form-control" id="InputCountryPet" placeholder="Country">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputCityPet">City</label>
+                <input type="email" class="form-control" id="InputCityPet" placeholder="City">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="InputDetailsPet">Details</label>
+                <textarea class="form-control" rows="4" id="InputDetailsPet" placeholder="Details"></textarea>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="InputCityPet">Primary Image</label>
+                <input type="email" class="form-control" id="InputCityPet" placeholder="(url)">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="InputCityPet">Gallery Image 1</label>
+                <input type="email" class="form-control" id="InputCityPet" placeholder="(url)">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="InputCityPet">Gallery Image 2</label>
+                <input type="email" class="form-control" id="InputCityPet" placeholder="(url)">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="InputCityPet">Gallery Image 3</label>
+                <input type="email" class="form-control" id="InputCityPet" placeholder="(url)">
+            </div>
+        </div>
+        <h4>Contact</h4>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputUserName">In charge</label>
+                <input type="email" class="form-control" id="InputUserName" placeholder="Name">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputNamePet">Email</label>
+                <input type="email" class="form-control" id="InputNamePet" placeholder="Contact email">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputNamePet">Phone</label>
+                <input type="email" class="form-control" id="InputNamePet" placeholder="Contact Phone">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputNamePet">Phone 2</label>
+                <input type="email" class="form-control" id="InputNamePet" placeholder="Contact Phone 2">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputNamePet">Address</label>
+                <input type="email" class="form-control" id="InputNamePet" placeholder="Address">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="InputNamePet">Zip code</label>
+                <input type="email" class="form-control" id="InputNamePet" placeholder="Zip code">
+            </div>
+        </div>
+    <center><button type="submit" class="btn btn-primary">Submit</button></center>
+    </form>
+    <br />
+ </div>
+<div class="col-md-4">
+    <img alt="Adoption Pets App" src="/img/pets_landing.jpg"  width="100%" />
 </div>
--->
+ 

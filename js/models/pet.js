@@ -15,6 +15,7 @@ window.Pet = Backbone.Model.extend({
         activity: "",
         type: "dog",
         country: "USA",
+        breed : "",
         region: "",
         vaccinated : "true",
         details: "",
@@ -23,6 +24,7 @@ window.Pet = Backbone.Model.extend({
         ContactName: "",
         ContactEmail : "",
         ContactPhone : "",
+        ContactPhone2 : "",
         ContactAddress : "",
         ContactZip: ""
     }
