@@ -8,6 +8,9 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     initialize: function () {
+        var storeVar = localStorage["PetList"];
+        if (storeVar !== undefined)
+            console.log(storeVar);
 
     },
 
@@ -21,8 +24,9 @@ app.AppRouter = Backbone.Router.extend({
 
         var petList = new PetCollection();
         petList.fetch({ success: function () {
-            $("#content").html(new PetListView({ model: petList, page: p }).el);
-        }
+                $("#content").html(new PetListView({ model: petList, page: p }).el);
+                localStorage.setItem("PetList", JSON.stringify(petList));
+            }
         });
     },
 
@@ -33,10 +37,10 @@ app.AppRouter = Backbone.Router.extend({
         var petList = new PetCollection();
         petList.fetch({ success: function () {
 
-            if(window.TypePetSession !== undefined)
+            if (window.TypePetSession !== undefined)
                 petList = petList.byType(window.TypePetSession);
-            
-            $("#content").html(new PetListView({ model: petList, page: p}).el);
+
+            $("#content").html(new PetListView({ model: petList, page: p }).el);
         }
         });
     },
