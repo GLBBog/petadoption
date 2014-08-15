@@ -22,16 +22,10 @@ window.TypesListView = Backbone.View.extend({
 
     filterPets: function (e) {
         var p = 1;
-        var petList = new PetCollection();
 
         window.TypePetSession = e.target.text.toLowerCase();
-        console.log('window.TypePetSession ' + window.TypePetSession);
-        petList.fetch({ success: function () {
-            petList = petList.byType(window.TypePetSession);
+        $("#content").html(new PetListView({ model: window.petList.byType(window.TypePetSession), page: p }).el);
 
-            $("#content").html(new PetListView({ model: petList, page: p }).el);
-        }
-        })
     }
 
 });

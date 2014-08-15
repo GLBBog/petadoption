@@ -3,7 +3,6 @@ window.Paginator = Backbone.View.extend({
     className: "col-lg-12",
 
     initialize:function () {
-        this.model.bind("reset", this.render, this);
         this.render();
     },
 

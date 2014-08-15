@@ -7,15 +7,14 @@ window.PetPublishView = Backbone.View.extend({
         this.render();
     },
     render: function () {
-        var pets = this.model.models;
-        $(this.el).html(this.template(pets[0].toJSON()));
+        $(this.el).html(this.template());
         return this;
     },
 
     SavePet: function (e) {
         // GET INPUTS VALUES
         var pet = {
-            id: null,
+            id: 14,
             name: $('#InputNamePet').val(),
             gender: $('#SelectPetGender').val(),
             age: $('#InputAgePet').val(),
@@ -39,6 +38,10 @@ window.PetPublishView = Backbone.View.extend({
 
         // CREATE THE PRODUCT OBJECT
         pet = new window.Pet(pet);
+        window.petList.add(pet);
+        console.log("salida del save" + window.petList);
         pet.save();
+        window.petList.fetch();
+
     }
 });

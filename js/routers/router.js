@@ -22,48 +22,32 @@ app.AppRouter = Backbone.Router.extend({
         typesList.add([{ name: 'Dog' }, { name: 'Cat' }, { name: 'Other'}]);
         var l = new TypesListView({ model: typesList, page: p });
 
-        var petList = new PetCollection();
-        petList.fetch({ success: function () {
-                $("#content").html(new PetListView({ model: petList, page: p }).el);
-                localStorage.setItem("PetList", JSON.stringify(petList));
-            }
-        });
+        $.getJSON('./data/jpets.json')
+            .done(function (data) {
+                window.petList = new PetCollection(data);
+                $("#content").html(new PetListView({ model: window.petList, page: p }).el);
+                localStorage.setItem("PetList", JSON.stringify(window.petList));
+            });
     },
 
     listPage: function (page) {
 
         var p = page ? parseInt(page, 10) : 1;
 
-        var petList = new PetCollection();
-        petList.fetch({ success: function () {
-
             if (window.TypePetSession !== undefined)
-                petList = petList.byType(window.TypePetSession);
+                window.petList = window.petList.byType(window.TypePetSession);
 
-            $("#content").html(new PetListView({ model: petList, page: p }).el);
-        }
-        });
+            $("#content").html(new PetListView({ model: window.petList, page: p }).el);
+
     },
 
     petDetails: function (id) {
 
-        var petList = new PetCollection();
-
-        petList.fetch({ success: function () {
-            petList = petList.byId(id);
-            $("#content").html(new PetView({ model: petList }).el);
-        }
-        });
+        $("#content").html(new PetView({ model: window.petList.byId(id) }).el);
     },
 
     addPet: function () {
-        console.log('publishing...');
-        var petList = new PetCollection();
-
-        petList.fetch({ success: function () {
-            $("#content").html(new PetPublishView({ model: petList }).el);
-        }
-        });
+        $("#content").html(new PetPublishView({ model: window.petList }).el);
     }
 });
 

@@ -3,7 +3,6 @@ window.Pet = Backbone.Model.extend({
     urlRoot: "",
 
     initialize: function () {
-        this.validators = {};
     },
 
     defaults: {
@@ -32,8 +31,7 @@ window.Pet = Backbone.Model.extend({
 
 window.PetCollection = Backbone.Collection.extend({
     model: Pet,
-    url: "./data/jpets.json",
-
+    localStorage: new Backbone.LocalStorage("PetList"),
     byType: function (type) {
         filtered = this.filter(function (pet) {
             return pet.get("type") === type;
