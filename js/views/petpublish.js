@@ -14,8 +14,8 @@ window.PetPublishView = Backbone.View.extend({
     SavePet: function (e) {
         // GET INPUTS VALUES
 
-        var GalleryPaths = [];
-        /*
+        var GalleryPaths = new Array();
+        
         if($('#InputGalleryImage1').val() != "") {
           GalleryPaths.push($('#InputGalleryImage1').val()); 
         }
@@ -24,7 +24,7 @@ window.PetPublishView = Backbone.View.extend({
         }
         if($('#InputGalleryImage3').val() != "") {
           GalleryPaths.push($('#InputGalleryImage3').val()); 
-        }*/
+        }
 
         var pet = {
             name: $('#InputNamePet').val(),
@@ -39,7 +39,7 @@ window.PetPublishView = Backbone.View.extend({
             vaccinated: $('#CheckVaccPet').val(),
             details: $('#InputDetailsPet').val(),
             DefaultPicture: $('#InputPrimaryImage').val(),
-            Gallery: [$('#InputGalleryImage1').val(), $('#InputGalleryImage2').val(), $('#InputGalleryImage3').val()],
+            Gallery: GalleryPaths,
             ContactName: $('#InputUserName').val(),
             ContactEmail: $('#InputEmail').val(),
             ContactPhone: $('#InputPhone').val(),
