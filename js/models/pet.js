@@ -1,10 +1,5 @@
 window.Pet = Backbone.Model.extend({
 
-    urlRoot: "",
-
-    initialize: function () {
-    },
-
     defaults: {
         id: null,
         name: "",
@@ -14,17 +9,17 @@ window.Pet = Backbone.Model.extend({
         activity: "",
         type: "dog",
         country: "USA",
-        breed : "",
+        breed: "",
         region: "",
-        vaccinated : "true",
+        vaccinated: "true",
         details: "",
         DefaultPicture: null,
-        Gallery : [],
+        Gallery: [],
         ContactName: "",
-        ContactEmail : "",
-        ContactPhone : "",
-        ContactPhone2 : "",
-        ContactAddress : "",
+        ContactEmail: "",
+        ContactPhone: "",
+        ContactPhone2: "",
+        ContactAddress: "",
         ContactZip: ""
     }
 });

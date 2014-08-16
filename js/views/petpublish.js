@@ -13,8 +13,20 @@ window.PetPublishView = Backbone.View.extend({
 
     SavePet: function (e) {
         // GET INPUTS VALUES
+
+        var GalleryPaths = [];
+        /*
+        if($('#InputGalleryImage1').val() != "") {
+          GalleryPaths.push($('#InputGalleryImage1').val()); 
+        }
+        if($('#InputGalleryImage2').val() != "") {
+          GalleryPaths.push($('#InputGalleryImage2').val()); 
+        }
+        if($('#InputGalleryImage3').val() != "") {
+          GalleryPaths.push($('#InputGalleryImage3').val()); 
+        }*/
+
         var pet = {
-            id: 14,
             name: $('#InputNamePet').val(),
             gender: $('#SelectPetGender').val(),
             age: $('#InputAgePet').val(),
@@ -36,12 +48,12 @@ window.PetPublishView = Backbone.View.extend({
             ContactZip: $('#InputZipCode').val()
         };
 
-        // CREATE THE PRODUCT OBJECT
-        pet = new window.Pet(pet);
-        window.petList.add(pet);
-        console.log("salida del save" + window.petList);
-        pet.save();
-        window.petList.fetch();
+        // Create Pet
+        var myPets = new PetCollection();
+        myPets.fetch();
 
+        var newPet = new window.Pet(pet);
+        myPets.add(newPet);
+        newPet.save();
     }
 });

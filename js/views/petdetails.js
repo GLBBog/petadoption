@@ -24,7 +24,7 @@ window.PetView = Backbone.View.extend({
 
             if (PetGallery.length > 0) {
                 for (var i = 0; i < PetGallery.length; i++) {
-                    cont.find('.carousel-inner').append("<div class='item " + (i === 0 ? "active" : '') + "'><img src='pics/" + PetGallery[i] + "' width='750' height='400'></div>");
+                    cont.find('.carousel-inner').append("<div class='item " + (i === 0 ? "active" : '') + "'><img src='" + PetGallery[i] + "' width='750' height='400'></div>");
                 }
             } else { this.$('.carousel').hide(); }
         }
