@@ -12,48 +12,51 @@ window.PetPublishView = Backbone.View.extend({
     },
 
     SavePet: function (e) {
-        // GET INPUTS VALUES
 
-        var GalleryPaths = new Array();
-        
-        if($('#InputGalleryImage1').val() != "") {
-          GalleryPaths.push($('#InputGalleryImage1').val()); 
+        if (!$('#addPetForm').validate()) {
+            // GET INPUTS VALUES
+
+            var GalleryPaths = new Array();
+
+            if ($('#InputGalleryImage1').val() != "") {
+                GalleryPaths.push($('#InputGalleryImage1').val());
+            }
+            if ($('#InputGalleryImage2').val() != "") {
+                GalleryPaths.push($('#InputGalleryImage2').val());
+            }
+            if ($('#InputGalleryImage3').val() != "") {
+                GalleryPaths.push($('#InputGalleryImage3').val());
+            }
+
+            var pet = {
+                name: $('#InputNamePet').val(),
+                gender: $('#SelectPetGender').val(),
+                age: $('#InputAgePet').val(),
+                size: $('#SelectPetSize').val(),
+                activity: $('#SelectPetActivity').val(),
+                type: $('#SelectPetType').val(),
+                country: $('#InputCountryPet').val(),
+                breed: $('#InputBreedPet').val(),
+                region: $('#InputCityPet').val(),
+                vaccinated: $('#CheckVaccPet').val(),
+                details: $('#InputDetailsPet').val(),
+                DefaultPicture: $('#InputPrimaryImage').val(),
+                Gallery: GalleryPaths,
+                ContactName: $('#InputUserName').val(),
+                ContactEmail: $('#InputEmail').val(),
+                ContactPhone: $('#InputPhone').val(),
+                ContactPhone2: $('#InputPhone2').val(),
+                ContactAddress: $('#InputAddress').val(),
+                ContactZip: $('#InputZipCode').val()
+            };
+
+            // Create Pet
+            var myPets = new PetCollection();
+            myPets.fetch();
+
+            var newPet = new window.Pet(pet);
+            myPets.add(newPet);
+            newPet.save();
         }
-        if($('#InputGalleryImage2').val() != "") {
-          GalleryPaths.push($('#InputGalleryImage2').val()); 
-        }
-        if($('#InputGalleryImage3').val() != "") {
-          GalleryPaths.push($('#InputGalleryImage3').val()); 
-        }
-
-        var pet = {
-            name: $('#InputNamePet').val(),
-            gender: $('#SelectPetGender').val(),
-            age: $('#InputAgePet').val(),
-            size: $('#SelectPetSize').val(),
-            activity: $('#SelectPetActivity').val(),
-            type: $('#SelectPetType').val(),
-            country: $('#InputCountryPet').val(),
-            breed: $('#InputBreedPet').val(),
-            region: $('#InputCityPet').val(),
-            vaccinated: $('#CheckVaccPet').val(),
-            details: $('#InputDetailsPet').val(),
-            DefaultPicture: $('#InputPrimaryImage').val(),
-            Gallery: GalleryPaths,
-            ContactName: $('#InputUserName').val(),
-            ContactEmail: $('#InputEmail').val(),
-            ContactPhone: $('#InputPhone').val(),
-            ContactPhone2: $('#InputPhone2').val(),
-            ContactAddress: $('#InputAddress').val(),
-            ContactZip: $('#InputZipCode').val()
-        };
-
-        // Create Pet
-        var myPets = new PetCollection();
-        myPets.fetch();
-
-        var newPet = new window.Pet(pet);
-        myPets.add(newPet);
-        newPet.save();
     }
 });
