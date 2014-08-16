@@ -18,9 +18,7 @@ window.PetListView = Backbone.View.extend({
         for (var i = startPos; i < endPos; i++) {
 
             var store = localStorage.getItem("PetList-"+i);
-            console.log('store' + store);
-            console.log('pets[i]' + pets[i]);
-
+            
             $('.petThumbnails', this.el).append(new PetListItemView({ model: pets[i] }).render().el);
         }
 

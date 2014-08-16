@@ -12,10 +12,8 @@ window.PetView = Backbone.View.extend({
 
         var pets = this.model.models;
 
-        console.log('pets.length ' + pets.length);
-
         if (pets.length > 0) {
-            console.log('this.model detail ' + pets[0].toJSON());
+            
             $(this.el).html(this.template(pets[0].toJSON()));
 
             var cont = $(this.el);

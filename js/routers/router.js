@@ -8,10 +8,6 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     initialize: function () {
-        //var storeVar = localStorage["PetList"];
-        //if (storeVar !== undefined)
-        //  console.log(storeVar);
-
     },
 
     list: function (page) {
@@ -36,23 +32,6 @@ app.AppRouter = Backbone.Router.extend({
                                             }
                                             $("#content").html(new PetListView({ model: myPets, page: p }).el);
                                         });
-/*
-        if (window.petList === undefined) {
-            $.getJSON('./data/jpets.json')
-                .done(function (data) {
-                    window.petList = new PetCollection(data);
-                    //localStorage.setItem("PetList", JSON.stringify(window.petList));
-                    //console.log('from local' + JSON.stringify(localStorage["PetList"]));
-                    //console.log('window.petList' + window.petList);
-                    
-                    //adding key by pet
-                    for (var j = 0; j < window.petList.length - 1; j++) {
-                        localStorage.setItem('PetList' + '-' + j, JSON.stringify(window.petList.models[j]));
-                    }
-
-                    $("#content").html(new PetListView({ model: window.petList, page: p }).el);
-                });
-        }*/
     },
 
     listPage: function (page) {
