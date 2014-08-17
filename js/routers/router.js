@@ -19,19 +19,19 @@ app.AppRouter = Backbone.Router.extend({
         var l = new TypesListView({ model: typesList, page: p });
 
         $.getJSON('./data/jpets.json')
-                                        .done(function (data) {
-                                            var myPets = new PetCollection();
-                                            myPets.fetch();
-                                            if (!myPets.length > 0) {
-                                                for (var i = 0; i < data.length; i++) {
-                                                    var note1 = new window.Pet()
-                                                    note1.attributes = data[i];
-                                                    myPets.add(note1);
-                                                    note1.save();
-                                                }
-                                            }
-                                            $("#content").html(new PetListView({ model: myPets, page: p }).el);
-                                        });
+        .done(function (data) {
+            var myPets = new PetCollection();
+            myPets.fetch();
+            if (!myPets.length > 0) {
+                for (var i = 0; i < data.length; i++) {
+                    var note1 = new window.Pet()
+                    note1.attributes = data[i];
+                    myPets.add(note1);
+                    note1.save();
+                }
+            }
+            $("#content").html(new PetListView({ model: myPets, page: p }).el);
+        });
     },
 
     listPage: function (page) {
