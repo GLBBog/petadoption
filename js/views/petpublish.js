@@ -34,7 +34,7 @@ window.PetPublishView = Backbone.View.extend({
                 age: $('#InputAgePet').val(),
                 size: $('#SelectPetSize').val() == 'Select...' ? 'Not Specified' : $('#SelectPetSize').val(),
                 activity: $('#SelectPetActivity').val() == 'Select...' ? 'Not Specified' : $('#SelectPetActivity').val(),
-                type: $('#SelectPetType').val()  == 'Select...' ? 'Not Specified' : $('#SelectPetType').val(),
+                type: $('#SelectPetType').val() == 'Select...' ? 'Not Specified' : $('#SelectPetType').val(),
                 country: $('#InputCountryPet').val(),
                 breed: $('#InputBreedPet').val(),
                 region: $('#InputCityPet').val(),
@@ -60,6 +60,7 @@ window.PetPublishView = Backbone.View.extend({
             $('.col-lg-12').hide();
             $('.col-md-8').hide();
             $('#SucessHolder').show();
+            return;
         }
     }
 });
