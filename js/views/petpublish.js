@@ -57,10 +57,11 @@ window.PetPublishView = Backbone.View.extend({
             var newPet = new window.Pet(pet);
             myPets.add(newPet);
             newPet.save();
+
             $('.col-lg-12').hide();
             $('.col-md-8').hide();
             $('#SucessHolder').show();
-            return;
+            e.preventDefault();
         }
     }
 });
