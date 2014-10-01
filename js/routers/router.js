@@ -8,6 +8,10 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     initialize: function () {
+        var storeVar = localStorage["PetList"];
+        if (storeVar !== undefined)
+            console.log(storeVar);
+
     },
 
     list: function (page) {
@@ -19,53 +23,35 @@ app.AppRouter = Backbone.Router.extend({
         var l = new TypesListView({ model: typesList, page: p });
 
         $.getJSON('./data/jpets.json')
-        .done(function (data) {
-            var myPets = new PetCollection();
-            myPets.fetch();
-            if (!myPets.length > 0) {
-                for (var i = 0; i < data.length; i++) {
-                    var note1 = new window.Pet()
-                    note1.attributes = data[i];
-                    myPets.add(note1);
-                    note1.save();
-                }
-            }
-            $("#content").html(new PetListView({ model: myPets, page: p }).el);
-        });
+            .done(function (data) {
+                window.petList = new PetCollection(data);
+                $("#content").html(new PetListView({ model: window.petList, page: p }).el);
+                localStorage.setItem("PetList", JSON.stringify(window.petList));
+            });
     },
 
     listPage: function (page) {
 
         var p = page ? parseInt(page, 10) : 1;
 
-        var myPets = new PetCollection();
-        myPets.fetch();
+            if (window.TypePetSession !== undefined)
+                window.petList = window.petList.byType(window.TypePetSession);
 
-        if (window.TypePetSession !== undefined)
-            myPets = myPets.byType(window.TypePetSession);
-
-        $("#content").html(new PetListView({ model: myPets, page: p }).el);
+            $("#content").html(new PetListView({ model: window.petList, page: p }).el);
 
     },
 
     petDetails: function (id) {
 
-        var myPets = new PetCollection();
-        myPets.fetch();
-
-        $("#content").html(new PetView({ model: myPets.byId(id) }).el);
+        $("#content").html(new PetView({ model: window.petList.byId(id) }).el);
     },
 
     addPet: function () {
-
-        var myPets = new PetCollection();
-        myPets.fetch();
-
-        $("#content").html(new PetPublishView({ model: myPets }).el);
+        $("#content").html(new PetPublishView({ model: window.petList }).el);
     }
 });
 
 utils.loadTemplate(['PetView', 'PetListItemView', 'PetPublishView'], function() {
+    });
     app = new app.AppRouter();
     Backbone.history.start();
-});
